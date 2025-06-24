@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domarkatalog | Dalecarlia Cup 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dc-blue: #1e40af;
+      --dc-gold: #f59e0b;
+      --dc-red: #dc2626;
+      --dc-light-blue: #dbeafe;
+      --dc-dark: #1f2937;
+      --dc-gray: #6b7280;
+      --dc-light-gray: #f9fafb;
+      --dc-white: #ffffff;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, var(--dc-light-blue) 0%, var(--dc-light-gray) 100%);
+      color: var(--dc-dark);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--dc-blue) 0%, var(--dc-red) 100%);
+      border-radius: 20px;
+      color: white;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: shimmer 8s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(180deg); }
+    }
+
+    .header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 300;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Search */
+    .search-container {
+      position: relative;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #search {
+      width: 100%;
+      padding: 18px 24px 18px 60px;
+      font-size: 1.1rem;
+      border: 2px solid transparent;
+      border-radius: 16px;
+      background: var(--dc-white);
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    #search:focus {
+      outline: none;
+      border-color: var(--dc-blue);
+      box-shadow: var(--shadow-lg), 0 0 0 3px rgba(30, 64, 175, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--dc-gray);
+      font-size: 1.2rem;
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      background: var(--dc-white);
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--dc-blue);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--dc-gray);
+      margin-top: 4px;
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--dc-white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-image {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-image img {
+      transform: scale(1.05);
+    }
+
+    .domarnr-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: linear-gradient(135deg, var(--dc-gold) 0%, #f97316 100%);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .card-name {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--dc-dark);
+      margin-bottom: 12px;
+    }
+
+    .card-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--dc-gray);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      padding: 8px 16px;
+      border-radius: 10px;
+      background: var(--dc-light-gray);
+    }
+
+    .card-phone:hover {
+      background: var(--dc-blue);
+      color: white;
+      transform: translateX(4px);
+    }
+
+    .phone-icon {
+      font-size: 1.1rem;
+    }
+
+    /* Loading & Error States */
+    .loading, .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--dc-gray);
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--dc-light-blue);
+      border-top: 3px solid var(--dc-blue);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .error {
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      color: var(--dc-red);
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      border: 1px solid #fecaca;
+    }
+
+    .no-results-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      opacity: 0.3;
+    }
+
+    /* Debug Panel */
+    .debug-panel {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--dc-white);
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--dc-blue);
+      min-width: 200px;
+      font-size: 0.9rem;
+    }
+
+    .debug-title {
+      font-weight: 600;
+      color: var(--dc-blue);
+      margin-bottom: 8px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      
+      .container {
+        padding: 16px;
+      }
+      
+      .header {
+        margin-bottom: 30px;
+        padding: 30px 20px;
+      }
+      
+      .stats {
+        gap: 12px;
+      }
+      
+      .stat-item {
+        padding: 12px 16px;
+        min-width: 100px;
+      }
+      
+      .card-image {
+        height: 240px;
+      }
+
+      .debug-panel {
+        position: relative;
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+
+    /* Animations */
+    .card {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Domarkatalog</h1>
+      <p class="subtitle">Dalecarlia Cup 2025 • Officiella Domare</p>
+    </header>
+
+    <div class="search-container">
+      <div class="search-icon">🔍</div>
+      <input id="search"
+             type="text"
+             placeholder="Sök domare efter namn, nummer eller telefon..."
+             autocomplete="off"
+             oninput="render()">
+    </div>
+
+    <div class="stats" id="stats">
+      <div class="stat-item">
+        <div class="stat-number" id="total-count">0</div>
+        <div class="stat-label">Totalt</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="visible-count">0</div>
+        <div class="stat-label">Visas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="with-images-count">0</div>
+        <div class="stat-label">Med bilder</div>
+      </div>
+    </div>
+
+    <div id="error" class="error" style="display:none;"></div>
+    
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+      <p>Laddar domare...</p>
+    </div>
+
+    <div id="list" class="grid"></div>
+
+    <!-- Debug panel -->
+    <div class="debug-panel">
+      <div class="debug-title">Debug Info</div>
+      <div>Status: <span id="debug-status">Loading...</span></div>
+      <div>API calls: <span id="debug-api-calls">0</span></div>
+      <div><a href="/api/debug" target="_blank">Visa alla data →</a></div>
+    </div>
+  </div>
+
+  <script>
+    const clean = s => String(s).toLowerCase()
+                         .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+                         .replace(/\s+/g,'');
+
+    let rows = [];
+    let isLoading = true;
+    let apiCallCount = 0;
+
+    function updateDebugInfo(status) {
+      document.getElementById('debug-status').textContent = status;
+      document.getElementById('debug-api-calls').textContent = apiCallCount;
+    }
+
+    async function loadData() {
+      try {
+        updateDebugInfo('Fetching...');
+        apiCallCount++;
+        
+        const response = await fetch('/api/getData');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        rows = await response.json();
+        isLoading = false;
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error').style.display = 'none';
+        
+        updateDebugInfo(`Loaded ${rows.length} domare`);
+        updateStats();
+        render();
+      } catch (error) {
+        console.error('Error loading data:', error);
+        isLoading = false;
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('error').innerHTML = `
+          <strong>Fel vid laddning av domardata</strong><br>
+          ${error.message}<br>
+          <small>Kontrollera att servern körs och att CSV/bilder finns.</small>
+        `;
+        updateDebugInfo('Error: ' + error.message);
+      }
+    }
+
+    function updateStats() {
+      document.getElementById('total-count').textContent = rows.length;
+      document.getElementById('with-images-count').textContent = rows.length;
+    }
+
+    function render() {
+      if (isLoading) return;
+
+      const q = clean(document.getElementById('search').value);
+      const list = document.getElementById('list');
+      list.innerHTML = '';
+
+      const filteredRows = rows.filter(r => clean(r.join(' ')).includes(q))
+                              .sort((a,b) => a[2] - b[2]);
+
+      document.getElementById('visible-count').textContent = filteredRows.length;
+
+      if (filteredRows.length === 0) {
+        list.innerHTML = `
+          <div class="no-results" style="grid-column: 1 / -1;">
+            <div class="no-results-icon">🔍</div>
+            <h3>Inga domare hittades</h3>
+            <p>Prova att söka på ett annat namn, nummer eller telefonnummer</p>
+            <p><small>Total domare i systemet: ${rows.length}</small></p>
+          </div>
+        `;
+        return;
+      }
+
+      filteredRows.forEach(([namn, tel, nr, imagePath], index) => {
+        const telStr = String(tel);
+        const nrStr = String(nr).padStart(4, '0');
+        
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card';
+        cardDiv.style.animationDelay = `${index * 100}ms`;
+        
+        cardDiv.innerHTML = `
+          <div class="card-image">
+            <img src="${imagePath}" 
+                 alt="Domare ${namn}" 
+                 loading="lazy" 
+                 onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;280&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;%23e5e7eb&quot;><rect width=&quot;24&quot; height=&quot;24&quot; fill=&quot;%23f3f4f6&quot;/><path d=&quot;M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z&quot;/><text x=&quot;12&quot; y=&quot;20&quot; text-anchor=&quot;middle&quot; fill=&quot;%23999&quot; font-size=&quot;3&quot;>Ingen bild</text></svg>'">
+            <div class="domarnr-badge">#${nrStr}</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-name">${namn}</h3>
+            <a href="tel:${telStr.replace(/\s+/g,'')}" class="card-phone">
+              <span class="phone-icon">📞</span>
+              ${telStr}
+            </a>
+          </div>
+        `;
+        
+        list.appendChild(cardDiv);
+      });
+    }
+
+    // Initialize
+    loadData();
+
+    // Auto-refresh every 5 minutes
+    setInterval(loadData, 5 * 60 * 1000);
+
+    // Add some interactive feedback
+    document.getElementById('search').addEventListener('focus', function() {
+      this.parentElement.style.transform = 'scale(1.02)';
+    });
+
+    document.getElementById('search').addEventListener('blur', function() {
+      this.parentElement.style.transform = 'scale(1)';
+    });
+  </script>
+</body>
+</html>

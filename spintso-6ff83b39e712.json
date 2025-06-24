@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "spintso",
+  "private_key_id": "6ff83b39e712bf627ea33bd34a9d4df47e906230",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDQxigPM7D5SD+F\n2cE6fc8KLwQ0NygtxuCWLfcR1tkIm1uL8Rcre+fdv4vDbHUuLku2byqutNi6jZ/B\n5VDyPPblCi6dpD/9PHSvZnA9E15Jx7Vj9bQRgGrbukZySLbi7prLtnGkBN8C9Qhm\nw3BtO1Bspg6Zp3dT4uTvY/hX5ttawAkl6xuTjKILFu+IPI/mjG/0shSOoBclLGNb\nyvdY6Pke5IbYPtt18WT+Vy709Gx4qXGUIDHBu5cBW9UARZ4IHuEYnRUMqHdhGP5Y\n2sM3UH8gk62RK+7ZRW2MvqVsb6jHVSSG89PTK9TUPqrlSlWFgMZUlFyCWeCHVPOC\nINVCZ6sVAgMBAAECggEAIXE8hYLgPG5ITqac/0Ob4KO7ZqnXM84Bt8zRIPhrd6d7\nOKV78qk8cRb3ymwbMTSVSDnyel3Zwbhh+OtE1ijR28qPwQzIe0Yt4tLj88Sge+0T\nr1lyaMNLWrsyAaiIMz3Jagxlk8J7/rtFh0CTR8wSi/TlrdNXmAZmabp304zVYmnK\nePlzvziObMz8O9ohc50QxvEW8MUxpeanw8KSXjeALayB05IJ0Jxta/bp9pxQ4Gq2\nyAW/VifZjvs7NMGaENWvDrKpj6e8dVUo3i0OdE6nESv/vT2hVNLnV4o8Xg/alwOo\nZ2N/4gqiJhKSlxE31aG9uobrqUmfAJP2eBGOnsKEmQKBgQDrxT/Umxu8IKMlgCB6\n0wSz0KPWCfuDMJNsMm3guPLl5smUi23vkwYLak+A0NGL6nQC8aog2FmSrXJKYnOG\ngKPeEdjt4q0T1Kq11u7CW/IpI/afYkj5ZarWHe5oFqowryaJd54lsmjL7SDtUMvo\nSmQ1R2QhTOouKoUbfrWQd22f1wKBgQDir+yQc8algTfr9L0X0E+W+h2cKYj2l8dO\nZzKCDG57RKvoGuCwhBorYeKRLsL07IrNIp522IcjhWVRdPq/PiJ+pvAKbhVuDpxF\nAx5eXebpFcDhSI46shL0bcAyNTxPAgitB+x/nIfSaH0Sc2IFFWv7UUHVRZjaQKW6\njgavi5he8wKBgEvqMUlVwDJtF9sFTG//7i2v6nEKuc9eHrnh6vtG0f8wtot78aQI\nZRPb4UmK803n6f7grXTx9LWD358P4D7YwOrKOF0wdaZC/cybLjmqvWh9yfU8Al87\nWyyiapddZONUIkZ1G5jrv06aRdXkBCQBgA6ftB/80hKXYlCeFfw0WDn1AoGAU+AW\nHujHsotaXrMCmGIaYNmQxSxVIjDMrQTgGmBxLKkfFlWDl6x5Zl3kkCWGO0uenAJY\nMc8ySYFdGMO417Qs3UH1hVZwFXXQenSJ8w65lrrW0EShY7Rp8Qj+2VT7SJyPCz7o\nUdtgIglJZd9NgGYJu0a4nioPQYo0CA/vB1sWeOMCgYA56FbheWMjY2AmckofHzlO\n9MraEgZ8NijmdqphYPU3eS258mYpzVKCjrbriIblLYcU4nbXAoNaLHtOSM+CmikT\n9Tc+XOTbL7E0gKWtfrnOL1qFLGPz6Dr+BYXZvImRzyXgzLuFxqJI0/BGUSwA3FDj\nELkCh4hSTOTrJsDXzclBwA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "cropping-images@spintso.iam.gserviceaccount.com",
+  "client_id": "107580478681254119451",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cropping-images%40spintso.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
